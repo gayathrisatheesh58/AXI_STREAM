@@ -27,7 +27,7 @@ module processing_element_2d #(
             w_reg <= weight_in;
     end
 
-    // horizontal forwarding — same as original PE
+    // horizontal forwarding - same as original PE
     always @(posedge clk) begin
         if (rst)
             a_out <= 0;
@@ -43,7 +43,7 @@ module processing_element_2d #(
             product_reg <= a_in * w_reg;
     end
 
-    // vertical accumulate — psum_in (from above) + local product, forwarded down
+    // vertical accumulate - psum_in (from above) + local product, forwarded down
     always @(posedge clk) begin
         if (rst)
             psum_out <= 0;
