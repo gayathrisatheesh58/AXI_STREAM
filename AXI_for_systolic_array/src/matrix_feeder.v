@@ -54,6 +54,7 @@ module matrix_feeder #(
             case (state)
 
                 S_IDLE: begin
+                   // I've copied the matrix, passed the weights, requested the PEs to load them, reset my counter, and marked myself busy. On the next clock, I'm ready for the next phase
                     done <= 0;
                     if (start) begin
                         for (r = 0; r < NUM_ROWS; r = r + 1)
